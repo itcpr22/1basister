@@ -227,6 +227,12 @@ public class login extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("PASSWORD:");
 
+        us.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usActionPerformed(evt);
+            }
+        });
+
         ps.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 psActionPerformed(evt);
@@ -415,6 +421,10 @@ public class login extends javax.swing.JFrame {
     private void psActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_psActionPerformed
         jButton2ActionPerformed(evt);         // TODO add your handling code here:
     }//GEN-LAST:event_psActionPerformed
+
+    private void usActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usActionPerformed
 
     /**
      * @param args the command line arguments
