@@ -9,11 +9,6 @@ package newpackage;
  *
  * @author Admin-1
  */
-
-public class product {
+class conn {
     
-    public void addProduct (String product_name, int quantity, String price){
-        String sql = "insert into product values (null, '"+product_name+"', '"+quantity+"', '"+price+"')";
-        System.out.println(sql);
-}
 }

@@ -26,6 +26,10 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+        
+        
+        
+        
     }
 
     /**
@@ -390,6 +394,7 @@ public class login extends javax.swing.JFrame {
             }
             us.setText("");
             ps.setText("");
+            
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
