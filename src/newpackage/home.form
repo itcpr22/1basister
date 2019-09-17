@@ -465,7 +465,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Seaarch Product:"/>
+        <Property name="text" type="java.lang.String" value="Search Product:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="addbtn">
@@ -490,7 +490,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="UPDATE"/>
+        <Property name="text" type="java.lang.String" value="EDIT"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updatebtnActionPerformed"/>

@@ -297,7 +297,7 @@ public class home extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Seaarch Product:");
+        jLabel1.setText("Search Product:");
 
         addbtn.setBackground(new java.awt.Color(255, 255, 0));
         addbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -310,7 +310,7 @@ public class home extends javax.swing.JFrame {
 
         updatebtn.setBackground(new java.awt.Color(51, 204, 0));
         updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        updatebtn.setText("UPDATE");
+        updatebtn.setText("EDIT");
         updatebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updatebtnActionPerformed(evt);
@@ -402,56 +402,29 @@ public class home extends javax.swing.JFrame {
 // TODO add your handling code here:
     }//GEN-LAST:event_btnproductupdateActionPerformed
 
-    private void addbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbtnActionPerformed
-        prod.requestFocusInWindow();
-        add_product.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_addbtnActionPerformed
-
-    private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
-        int selRow = tbl_product.getSelectedRow();
-        if (selRow != -1) {
-            String tid = tbl_product
-                    .getValueAt(selRow, 0).toString();
-            String tpr = tbl_product
-                    .getValueAt(selRow, 1).toString();
-            String tqt = tbl_product
-                    .getValueAt(selRow, 2).toString();
-            String tp = tbl_product
-                    .getValueAt(selRow, 3).toString();
-
-            id.setText(tid);
-            prod1.setText(tpr);
-            quan1.setText(tp);
-            price1.setText(tqt);
-
-            Update_product.setVisible(true);
-
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Please select the row to be Updated!",
-                    "No row selected",
-                    JOptionPane.WARNING_MESSAGE);
-        }// TODO add your handling code here:
-    }//GEN-LAST:event_updatebtnActionPerformed
+    private void quantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quantActionPerformed
 
     private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
         int selRow = tbl_product.getSelectedRow();
         if (selRow != -1) {
             int column = 0;
             String id = tbl_product
-                    .getValueAt(selRow, column).toString();
+            .getValueAt(selRow, column).toString();
             int ans = JOptionPane.showConfirmDialog(rootPane,
-                    "Are you sure you want to DELETE this Product?",
-                    "Delete Confirmation",
-                    JOptionPane.YES_NO_OPTION);
+                "Are you sure you want to DELETE this Product?",
+                "Delete Confirmation",
+                JOptionPane.YES_NO_OPTION);
 
             if (ans == JOptionPane.YES_OPTION) {
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
                     String conURL = "jdbc:mysql://localhost/liadocactivity"
-                            + "?user=root&password=";
+                    + "?user=root&password=";
                     Connection con = DriverManager.getConnection(conURL);
                     PreparedStatement pstmt = con.prepareStatement("DELETE FROM producttable "
-                            + "WHERE id = ? ");
+                        + "WHERE id = ? ");
                     pstmt.setString(1, id);
                     pstmt.executeUpdate();
 
@@ -463,28 +436,55 @@ public class home extends javax.swing.JFrame {
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Please select the row to be Deleted!",
-                    "No Row Selected",
-                    JOptionPane.WARNING_MESSAGE);
+                "No Row Selected",
+                JOptionPane.WARNING_MESSAGE);
 
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_deletebtnActionPerformed
 
-    private void quantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_quantActionPerformed
+    private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
+        int selRow = tbl_product.getSelectedRow();
+        if (selRow != -1) {
+            String tid = tbl_product
+            .getValueAt(selRow, 0).toString();
+            String tpr = tbl_product
+            .getValueAt(selRow, 1).toString();
+            String tqt = tbl_product
+            .getValueAt(selRow, 2).toString();
+            String tp = tbl_product
+            .getValueAt(selRow, 3).toString();
 
-    private void search_productKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_productKeyPressed
+            id.setText(tid);
+            prod1.setText(tpr);
+            quan1.setText(tp);
+            price1.setText(tqt);
+
+            Update_product.setVisible(true);
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Please select the row to be Updated!",
+                "No row selected",
+                JOptionPane.WARNING_MESSAGE);
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_updatebtnActionPerformed
+
+    private void addbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbtnActionPerformed
+        prod.requestFocusInWindow();
+        add_product.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_addbtnActionPerformed
+
+    private void search_productKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_productKeyTyped
         search();        // TODO add your handling code here:
-    }//GEN-LAST:event_search_productKeyPressed
+    }//GEN-LAST:event_search_productKeyTyped
 
     private void search_productKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_productKeyReleased
         search();        // TODO add your handling code here:
     }//GEN-LAST:event_search_productKeyReleased
 
-    private void search_productKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_productKeyTyped
+    private void search_productKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_productKeyPressed
         search();        // TODO add your handling code here:
-    }//GEN-LAST:event_search_productKeyTyped
+    }//GEN-LAST:event_search_productKeyPressed
 
     /**
      * @param args the command line arguments
