@@ -5,7 +5,6 @@
  */
 package newpackage;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,7 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
@@ -61,7 +59,7 @@ public class home extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         prod1 = new javax.swing.JTextField();
         price1 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        btnproductupdate = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -74,15 +72,15 @@ public class home extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         ss = new javax.swing.JLabel();
 
-        add_product.setMinimumSize(new java.awt.Dimension(500, 350));
+        add_product.setMinimumSize(new java.awt.Dimension(300, 250));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Product:");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Quantity:");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Price:");
 
         prod.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -94,6 +92,7 @@ public class home extends javax.swing.JFrame {
 
         pr.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
+        jButton2.setBackground(new java.awt.Color(0, 204, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton2.setText("Save");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +101,8 @@ public class home extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 0, 153));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Insert Product");
 
@@ -144,24 +144,26 @@ public class home extends javax.swing.JFrame {
                 .addGroup(add_productLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(prod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(add_productLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(quant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(add_productLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(pr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        Update_product.setMinimumSize(new java.awt.Dimension(500, 300));
+        Update_product.setMinimumSize(new java.awt.Dimension(300, 250));
 
         quan1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 0, 153));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Update Product");
 
@@ -183,11 +185,12 @@ public class home extends javax.swing.JFrame {
 
         price1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton6.setText("Save");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnproductupdate.setBackground(new java.awt.Color(0, 204, 0));
+        btnproductupdate.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnproductupdate.setText("Save");
+        btnproductupdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnproductupdateActionPerformed(evt);
             }
         });
 
@@ -225,7 +228,7 @@ public class home extends javax.swing.JFrame {
                         .addGroup(Update_productLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(quan1)
                             .addComponent(price1)))
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnproductupdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         Update_productLayout.setVerticalGroup(
@@ -249,12 +252,14 @@ public class home extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(price1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnproductupdate, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tbl_product.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 255, 0)));
+        tbl_product.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tbl_product.setForeground(new java.awt.Color(255, 0, 102));
         tbl_product.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -279,6 +284,7 @@ public class home extends javax.swing.JFrame {
             tbl_product.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        search_product.setForeground(new java.awt.Color(0, 102, 102));
         search_product.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 search_productKeyPressed(evt);
@@ -293,6 +299,7 @@ public class home extends javax.swing.JFrame {
 
         jLabel1.setText("Seaarch Product:");
 
+        addbtn.setBackground(new java.awt.Color(255, 255, 0));
         addbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         addbtn.setText("ADD");
         addbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -301,6 +308,7 @@ public class home extends javax.swing.JFrame {
             }
         });
 
+        updatebtn.setBackground(new java.awt.Color(51, 204, 0));
         updatebtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         updatebtn.setText("UPDATE");
         updatebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -374,7 +382,8 @@ public class home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-add_product();
+        add_product();
+        add_product.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -386,9 +395,12 @@ add_product();
         // TODO add your handling code here:
     }//GEN-LAST:event_prod1ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-update_product();       // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void btnproductupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproductupdateActionPerformed
+        update_product();
+       Update_product.setVisible(false);
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnproductupdateActionPerformed
 
     private void addbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbtnActionPerformed
         prod.requestFocusInWindow();
@@ -396,7 +408,7 @@ update_product();       // TODO add your handling code here:
     }//GEN-LAST:event_addbtnActionPerformed
 
     private void updatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatebtnActionPerformed
-  int selRow = tbl_product.getSelectedRow();
+        int selRow = tbl_product.getSelectedRow();
         if (selRow != -1) {
             String tid = tbl_product
                     .getValueAt(selRow, 0).toString();
@@ -410,19 +422,19 @@ update_product();       // TODO add your handling code here:
             id.setText(tid);
             prod1.setText(tpr);
             quan1.setText(tp);
-           price1.setText(tqt);
+            price1.setText(tqt);
 
             Update_product.setVisible(true);
 
         } else {
             JOptionPane.showMessageDialog(rootPane, "Please select the row to be Updated!",
                     "No row selected",
-                    JOptionPane.WARNING_MESSAGE);    
+                    JOptionPane.WARNING_MESSAGE);
         }// TODO add your handling code here:
     }//GEN-LAST:event_updatebtnActionPerformed
 
     private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
-    int selRow = tbl_product.getSelectedRow();
+        int selRow = tbl_product.getSelectedRow();
         if (selRow != -1) {
             int column = 0;
             String id = tbl_product
@@ -455,7 +467,7 @@ update_product();       // TODO add your handling code here:
                     JOptionPane.WARNING_MESSAGE);
 
         }
-          // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_deletebtnActionPerformed
 
     private void quantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quantActionPerformed
@@ -463,15 +475,15 @@ update_product();       // TODO add your handling code here:
     }//GEN-LAST:event_quantActionPerformed
 
     private void search_productKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_productKeyPressed
-search();        // TODO add your handling code here:
+        search();        // TODO add your handling code here:
     }//GEN-LAST:event_search_productKeyPressed
 
     private void search_productKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_productKeyReleased
-search();        // TODO add your handling code here:
+        search();        // TODO add your handling code here:
     }//GEN-LAST:event_search_productKeyReleased
 
     private void search_productKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_productKeyTyped
-search();        // TODO add your handling code here:
+        search();        // TODO add your handling code here:
     }//GEN-LAST:event_search_productKeyTyped
 
     /**
@@ -513,10 +525,10 @@ search();        // TODO add your handling code here:
     private javax.swing.JDialog Update_product;
     private javax.swing.JDialog add_product;
     private javax.swing.JButton addbtn;
+    private javax.swing.JButton btnproductupdate;
     private javax.swing.JButton deletebtn;
     private javax.swing.JLabel id;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -541,7 +553,7 @@ search();        // TODO add your handling code here:
     private javax.swing.JButton updatebtn;
     // End of variables declaration//GEN-END:variables
 
- public void add_product() {
+    public void add_product() {
         String product = prod.getText();
         String quantities = quant.getText();
         String price = pr.getText();
@@ -640,9 +652,9 @@ search();        // TODO add your handling code here:
             pstmt.setString(4, sid);
             pstmt.executeUpdate();
             JOptionPane.showMessageDialog(rootPane, product1 + " has Successfully Updated");
-              this.setVisible(false);
+            
             loadproduct();
-          
+
             prod1.setText("");
             price1.setText("");
             quan1.setText("");
@@ -685,5 +697,3 @@ search();        // TODO add your handling code here:
         }
     }
 }
-
-
