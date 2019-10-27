@@ -9,6 +9,11 @@ package newpackage;
  *
  * @author Admin-1
  */
-class conn {
+public class conn {
+    
+    protected String dbname = "it22";
+    protected String url = "jdbc:mysql://localhost/"+dbname;
+    protected String username = "root";
+    protected String password = ""; 
     
 }
